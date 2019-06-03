@@ -1,3 +1,8 @@
+Before doing this install minikube in your machines either in windows or centos as applicable.
+
+https://dzone.com/articles/setting-up-kubernetes-k8s-on-windows
+
+
 Steps to create a Cluster on Kubernetes 
 make an entry of each host in /etc/hosts if  you DNS server put it there.Kubernetes has its OWN DNS setup
 cat /etc/hosts
