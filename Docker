@@ -1,0 +1,15 @@
+DockerFile --(Build)--> DockerImage --(run)--> DockerContainer
+
+DockerFile is what you or developer write code to do something (ex- Install)
+
+Docker Image is you get when you build docker file .
+
+Docker Container is you get when you run your Docker image.
+
+If you have 30 Docker containers that you want to run, you can run them all on a single virtual machine.
+To run 30 virtual machines, you’ve got to boot 30 operating systems with at least minimum resource requirements available before
+factoring the hypervisor for them to run on with the base OS.
+Just assuming you’re going to go with a minimum 256M VM you’d be looking at 7.5G of RAM with 
+30 different OS kernels managing resources. 
+With Docker you could allocate a chunk of RAM to one VM and have a single OS managing those competing resources… 
+and you could do all of that on the base operating system without a costly hypervisor needing to be involved at all.
