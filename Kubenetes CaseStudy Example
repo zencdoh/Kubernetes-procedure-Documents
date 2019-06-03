@@ -1,0 +1,14 @@
+Kubernetes Use case
+
+CASE STUDY:
+Bose: Supporting Rapid Development for Millions of IoT Products With Kubernetes
+Company  Bose Corporation     Location  Framingham, Massachusetts      Industry  Consumer Electronics
+Challenge
+A household name in high-quality audio equipment, Bose has offered connected products for more than five years, and as that demand grew, the infrastructure had to change to support it. "We needed to provide a mechanism for developers to rapidly prototype and deploy services all the way to production pretty fast,” says Lead Cloud Engineer Josh West. In 2016, the company decided to start building a platform from scratch. The primary goal: "To be one to two steps ahead of the different product groups so that we are never scrambling to catch up with their scale,” says Cloud Architecture Manager Dylan O’Mahony.
+
+Solution
+From the beginning, the team knew it wanted a microservices architecture. After evaluating and prototyping a couple of orchestration solutions, the team decided to adopt Kubernetes for its scaled IoT Platform-as-a-Service running on AWS. The platform, which also incorporated Prometheus monitoring, launched in production in 2017, serving over 3 million connected products from the get-go. Bose has since adopted a number of other CNCF technologies, including Fluentd, CoreDNS, Jaeger, and OpenTracing.
+
+Impact
+With about 100 engineers onboarded, the platform is now enabling 30,000 non-production deployments across dozens of microservices per year. In 2018, there were 1250+ production deployments. Just one production cluster holds 1,800 namespaces and 340 worker nodes. "We had a brand new service taken from concept through coding and deployment all the way to production, including hardening, security testing and so forth, in less than two and a half weeks,” says O’Mahony.
+
