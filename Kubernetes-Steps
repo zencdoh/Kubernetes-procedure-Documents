@@ -16,9 +16,9 @@ Username = centos
 
  
 
-192.168.2.1 kubernetes-master.learnitguide.net kubernetes-master
-192.168.2.2 kubernetes-worker1.learnitguide.net kubernetes-worker1
-192.168.2.3 kubernetes-worker2.learnitguide.net kubernetes-worker2
+34.205.29.173 K8S_Master K8S_Master
+35.170.61.177 K8s_Node1 K8s_Node1
+18.209.211.145 K8S_Node2 K8s_Node1
 
 2. Make sure kubernetes master and worker nodes are reachable between each other.
 3. Kubernetes doesn't support "Swap". Disable Swap on all nodes using below command and also to make it permanent comment out the swap entry in /etc/fstab file.
