@@ -73,7 +73,7 @@ echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
 5. Initializing and setting up the kubernetes cluster on Master node
 Use "kubeadm" command to initialize the kubernetes cluster along with "apiserver-advertise-address" and "--pod-network-cidr" options. It is used to specify the IP address for kubernetes cluster communication and range of networks for the pods.
 
-[root@kubernetes-master ~]# kubeadm init --apiserver-advertise-address 192.168.2.1 --pod-network-cidr=172.16.0.0/16
+[root@kubernetes-master ~]# kubeadm init --apiserver-advertise-address 34.205.29.173 --pod-network-cidr=172.16.0.0/16
 Output:
 [init] using Kubernetes version: v1.11.2
 [preflight] running pre-flight checks
@@ -103,7 +103,7 @@ Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
   https://kubernetes.io/docs/concepts/cluster-administration/addons/
 You can now join any number of machines by running the following on each node
 as root:
-  kubeadm join 192.168.2.1:6443 --token pxavv6.zwqgdlivwfgbaaud --discovery-token-ca-cert-hash sha256:0cd1e77fd1514a6ec60e3c67c678c0d88ac80b18ff8184271ecef1ccdc01ee55
+  kubeadm join 34.205.29.173:6443 --token pxavv6.zwqgdlivwfgbaaud --discovery-token-ca-cert-hash sha256:0cd1e77fd1514a6ec60e3c67c678c0d88ac80b18ff8184271ecef1ccdc01ee55
 [root@kubernetes-master ~]#
 Kubernetes cluster initialization is completed, Copy the join token highlighted in yellow color from the "kubeadm init" command output and store it somewhere, it is required while joining the worker nodes.
 
@@ -132,7 +132,7 @@ kubernetes-master   Ready     master    14m       v1.11.1
 [root@kubernetes-master ~]#
 8. Join all worker nodes with kubernetes master node
 Now, Login into all worker nodes and use the join token what you have copied earlier to join all the worker nodes with kubernetes master node as below.
-kubeadm join 192.168.2.1:6443 --token pxavv6.zwqgdlivwfgbaaud --discovery-token-ca-cert-hash sha256:0cd1e77fd1514a6ec60e3c67c678c0d88ac80b18ff8184271ecef1ccdc01ee55
+kubeadm join 34.205.29.173:6443 --token pxavv6.zwqgdlivwfgbaaud --discovery-token-ca-cert-hash sha256:0cd1e77fd1514a6ec60e3c67c678c0d88ac80b18ff8184271ecef1ccdc01ee55
 Output:
 [preflight] running pre-flight checks
         [WARNING RequiredIPVSKernelModulesAvailable]: the IPVS proxier will not be used, because the following required kernel modules are not loaded: [ip_vs_wrr ip_vs_sh ip_vs ip_vs_rr] or no builtin kernel ipvs support: map[nf_conntrack_ipv4:{} ip_vs:{} ip_vs_rr:{} ip_vs_wrr:{} ip_vs_sh:{}]
@@ -141,8 +141,8 @@ you can solve this problem with following methods:
 2. Provide the missing builtin kernel ipvs support
 I0811 21:22:23.219089    2523 kernel_validator.go:81] Validating kernel version
 I0811 21:22:23.219199    2523 kernel_validator.go:96] Validating kernel config
-[discovery] Trying to connect to API Server "192.168.2.1:6443"
-[discovery] Created cluster-info discovery client, requesting info from "https://192.168.2.1:6443"
+[discovery] Trying to connect to API Server "34.205.29.173:6443"
+[discovery] Created cluster-info discovery client, requesting info from "https://34.205.29.173:6443"
 [discovery] Requesting info from "https://192.168.2.1:6443" again to validate TLS against the pinned public key
 [discovery] Cluster info signature and contents are valid and TLS certificate validates against pinned roots, will use API Server "192.168.2.1:6443"
 [discovery] Successfully established connection with API Server "192.168.2.1:6443"
