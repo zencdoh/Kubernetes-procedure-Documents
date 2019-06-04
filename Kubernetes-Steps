@@ -42,7 +42,7 @@ On Master Node:
 5. Initializing and setting up the kubernetes cluster on Master node
 6. Copy /etc/kubernetes/admin.conf and Change Ownership only on Master node
 7. Install Network add-on to enable the communication between the pods only on Master node
-
+sudo yum install firewalld
 On Worker Nodes:
 8. Join all worker nodes with kubernetes master node
 
@@ -65,6 +65,13 @@ yum -y install docker kubeadm
 systemctl start docker && systemctl enable docker
 systemctl start kubelet && systemctl enable kubelet
 4. Allow Network Ports in firewall on master and all worker nodes
+
+------
+sudo systemctl start firewalld
+sudo systemctl enable firewalld
+ sudo systemctl status firewalld
+
+
 firewall-cmd --permanent --add-port=6443/tcp
 firewall-cmd --permanent --add-port=10250/tcp
 firewall-cmd --reload
