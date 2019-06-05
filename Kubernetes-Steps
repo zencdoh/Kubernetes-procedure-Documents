@@ -1,6 +1,7 @@
 Before doing this install minikube in your machines either in windows or centos as applicable.
 
 https://dzone.com/articles/setting-up-kubernetes-k8s-on-windows
+https://opensource.com/article/18/10/getting-started-minikube
 
 
 Steps to create a Cluster on Kubernetes 
